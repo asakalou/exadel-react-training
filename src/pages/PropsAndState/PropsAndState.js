@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
 
+/**
+ * State and lifecycle at https://reactjs.org/docs/state-and-lifecycle.html
+ * Components and Props at https://reactjs.org/docs/components-and-props.html
+ *
+ */
+
+
+const Formatter1 = (props) => <span>Formatted 1: {props.value}</span>;
 
 class Formatter extends Component {
     constructor(props) {
@@ -32,7 +40,11 @@ class PropsAndState extends Component {
                 </div>
 
                 <div>
-                    This is a value from props: <Formatter value="Hello World"/>
+                    This is a value from props in Formatter1: <Formatter1 value="Hello World"/>
+                </div>
+
+                <div>
+                    This is a value from props in Formatter: <Formatter value="Hello World"/>
                 </div>
             </div>
         );

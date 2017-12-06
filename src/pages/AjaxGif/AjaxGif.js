@@ -4,6 +4,10 @@ import axios from 'axios';
 const URL = 'http://api.giphy.com/v1/gifs/search';
 const API_KEY = 'JokfEsQ6phaio2LlwNgGHhpBr47QE89e';
 
+/**
+ * axios documentation and examples at https://github.com/axios/axios
+ */
+
 class AjaxGif extends Component {
 
     constructor(props) {
@@ -46,7 +50,10 @@ class AjaxGif extends Component {
                 <hr/>
 
                 <form onSubmit={this.handleSearch}>
-                    Query <input type="text" value={this.state.query} onChange={this.handleQueryChange}/>
+                    <label htmlFor="ajaxGifQuery">Query</label>
+                    <input id="ajaxGifQuery" type="text"
+                           value={this.state.query}
+                           onChange={this.handleQueryChange}/>
                 </form>
 
                 <ul>

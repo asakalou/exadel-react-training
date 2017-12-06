@@ -8,6 +8,7 @@ import Forms from "./pages/Forms";
 import Refs from "./pages/Refs";
 import PropsAndState from "./pages/PropsAndState";
 import ComponentLifecycle from "./pages/ComponentLifecycle";
+import PurePure from "./pages/PurePure";
 import Fragments from "./pages/Fragments";
 import AjaxGif from "./pages/AjaxGif";
 
@@ -36,8 +37,8 @@ class App extends Component {
                             <li><Link to="/props-state">Props & State</Link></li>
                             <li><Link to="/prop-types">PropTypes</Link></li>
                             <li><Link to="/component-lifecycle">Component Life Cycle</Link></li>
-                            <li><Link to="/events">Events</Link></li>
-                            <li><Link to="/forms">Refs</Link></li>
+                            <li><Link to="/pure-components">Pure Components</Link></li>
+                            <li><Link to="/refs">Refs</Link></li>
                             <li><Link to="/forms">Forms</Link></li>
                             <li><Link to="/portals">Portals</Link></li>
                             <li><Link to="/fragments">Fragments</Link></li>
@@ -49,7 +50,7 @@ class App extends Component {
                         <Route path="/props-state" component={PropsAndState}/>
                         <Route path="/prop-types" component={PropAndTypes}/>
                         <Route path="/component-lifecycle" component={ComponentLifecycle}/>
-                        <Route path="/events" component={NotImplemented}/>
+                        <Route path="/pure-components" component={PurePure}/>
                         <Route path="/portals" component={Portals}/>
                         <Route path="/forms" component={Forms}/>
                         <Route path="/refs" component={Refs}/>

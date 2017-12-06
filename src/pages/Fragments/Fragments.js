@@ -1,17 +1,29 @@
 import React, {Component, Fragment} from 'react';
 
+/**
+ * Fragments look like empty JSX tags.
+ * They let you group a list of children without adding extra nodes to the DOM.
+ *
+ * Fragments at https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html
+ */
 class Fragments extends Component {
 
-    constructor(props) {
-        super(props);
+    anotherFragment() {
+        return (
+            <Fragment>
+                <span>Another</span>
+                <span>Fragment</span>
+            </Fragment>
+        )
     }
-
 
     render() {
         return (
             <div>
                 <h1>Fragments</h1>
                 <hr/>
+
+                {this.anotherFragment()}
 
                 <div>
                     <div key={1}>#01</div>

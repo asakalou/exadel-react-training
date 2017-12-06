@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-let modalsRoot = document.getElementById('modals');
+/**
+ * Portals provide a first-class way to render children into a DOM node
+ * that exists outside the DOM hierarchy of the parent component.
+ *
+ * Portals documentation at https://reactjs.org/docs/portals.html
+ */
 
+let modalsRoot = document.getElementById('modals');
 
 class MyModal extends Component {
     constructor(props) {
@@ -64,7 +70,7 @@ class Portals extends Component {
                     <MyModal>
                         <button type="button" onClick={this.handleHide}>Hide Modal</button>
                     </MyModal>
-                :null}
+                    : null}
 
             </div>
         );

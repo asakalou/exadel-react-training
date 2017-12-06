@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Item from "./Item";
 
-
+/**
+ * Component Lifecycle at https://reactjs.org/docs/react-component.html
+ */
 class ComponentLifecycle extends Component {
 
     constructor(props) {
@@ -25,7 +27,7 @@ class ComponentLifecycle extends Component {
 
     handleChangeItemName(item) {
         const indexOfItem = this.state.items.indexOf(item);
-        this.state.items[indexOfItem] = {...item, name: `${item.name} -> ${new Date().getTime()}`};
+        this.state.items[indexOfItem].name = `${item.name} -> ${new Date().getTime()}`;
         this.setState({
             items: this.state.items
         });

@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+/**
+ * Forms documentation at https://reactjs.org/docs/forms.html
+ * Uncontrolled components at https://reactjs.org/docs/uncontrolled-components.html
+ */
 class Forms extends Component {
 
     constructor(props) {
@@ -48,7 +52,8 @@ class Forms extends Component {
                     <h2>Controlled</h2>
                     <form>
                         <input type="text"
-                               value={this.state.controlledName} onChange={this.handleControlledNameChange}/>
+                               value={this.state.controlledName}
+                               onChange={this.handleControlledNameChange}/>
                         <div>{this.state.controlledName}</div>
                     </form>
                 </div>

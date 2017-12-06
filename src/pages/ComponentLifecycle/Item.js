@@ -7,7 +7,6 @@ export class Item extends Component {
         super(props);
 
         this.handleChangeName = this.handleChangeName.bind(this);
-        this.handleThrowError = this.handleThrowError.bind(this);
 
         this.logEvent('constructor');
     }
