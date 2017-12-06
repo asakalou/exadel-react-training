@@ -1,0 +1,67 @@
+import React, {Component} from 'react';
+import './App.css';
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+
+import Portals from "./pages/Portals";
+import PropAndTypes from "./pages/PropAndTypes";
+import Forms from "./pages/Forms";
+import Refs from "./pages/Refs";
+import PropsAndState from "./pages/PropsAndState";
+import ComponentLifecycle from "./pages/ComponentLifecycle";
+import Fragments from "./pages/Fragments";
+import AjaxGif from "./pages/AjaxGif";
+
+
+const NotImplemented = () => <div>Not Implemented</div>;
+
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {name: ''};
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+        this.setState({name: this.input.value});
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Router>
+                    <div>
+                        <ul>
+                            <li><Link to="/props-state">Props & State</Link></li>
+                            <li><Link to="/prop-types">PropTypes</Link></li>
+                            <li><Link to="/component-lifecycle">Component Life Cycle</Link></li>
+                            <li><Link to="/events">Events</Link></li>
+                            <li><Link to="/forms">Refs</Link></li>
+                            <li><Link to="/forms">Forms</Link></li>
+                            <li><Link to="/portals">Portals</Link></li>
+                            <li><Link to="/fragments">Fragments</Link></li>
+                            <li><Link to="/Ajax">Ajax</Link></li>
+                        </ul>
+
+                        <hr/>
+
+                        <Route path="/props-state" component={PropsAndState}/>
+                        <Route path="/prop-types" component={PropAndTypes}/>
+                        <Route path="/component-lifecycle" component={ComponentLifecycle}/>
+                        <Route path="/events" component={NotImplemented}/>
+                        <Route path="/portals" component={Portals}/>
+                        <Route path="/forms" component={Forms}/>
+                        <Route path="/refs" component={Refs}/>
+                        <Route path="/fragments" component={Fragments}/>
+                        <Route path="/ajax" component={AjaxGif}/>
+                    </div>
+                </Router>
+
+            </div>
+        );
+    }
+}
+
+
+export default App;
