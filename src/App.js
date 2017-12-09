@@ -17,23 +17,13 @@ const NotImplemented = () => <div>Not Implemented</div>;
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {name: ''};
-        this.onSubmit = this.onSubmit.bind(this);
-    }
-
-    onSubmit(event) {
-        event.preventDefault();
-        this.setState({name: this.input.value});
-    }
 
     render() {
         return (
             <div className="App">
                 <Router>
                     <div>
-                        <ul>
+                        <ol>
                             <li><Link to="/props-state">Props & State</Link></li>
                             <li><Link to="/prop-types">PropTypes</Link></li>
                             <li><Link to="/component-lifecycle">Component Life Cycle</Link></li>
@@ -43,7 +33,7 @@ class App extends Component {
                             <li><Link to="/portals">Portals</Link></li>
                             <li><Link to="/fragments">Fragments</Link></li>
                             <li><Link to="/Ajax">Ajax</Link></li>
-                        </ul>
+                        </ol>
 
                         <hr/>
 

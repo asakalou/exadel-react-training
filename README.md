@@ -8,7 +8,7 @@ All the dependencies are already here.
 Check them at `package.json`.
 __Dependencies:__
 - [prop-types](https://reactjs.org/docs/typechecking-with-proptypes.html) - runtime component props checking
-- [react-router-dom](https://github.com/facebookincubator/create-react-app) - simple routing.
+- [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - simple routing.
 - [axios](https://github.com/axios/axios) - ajax
 - ...react dependencies
 
