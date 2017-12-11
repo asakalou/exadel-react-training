@@ -11,6 +11,8 @@ import ComponentLifecycle from "./pages/ComponentLifecycle";
 import PurePure from "./pages/PurePure";
 import Fragments from "./pages/Fragments";
 import AjaxGif from "./pages/AjaxGif";
+import ReduxExample from "./pages/ReduxExample";
+import ImmutableData from "./pages/ImmutableData";
 
 
 const NotImplemented = () => <div>Not Implemented</div>;
@@ -33,6 +35,8 @@ class App extends Component {
                             <li><Link to="/portals">Portals</Link></li>
                             <li><Link to="/fragments">Fragments</Link></li>
                             <li><Link to="/Ajax">Ajax</Link></li>
+                            <li><Link to="/redux">Redux</Link></li>
+                            <li><Link to="/immutable-data">Immutable Data</Link></li>
                         </ol>
 
                         <hr/>
@@ -46,6 +50,8 @@ class App extends Component {
                         <Route path="/refs" component={Refs}/>
                         <Route path="/fragments" component={Fragments}/>
                         <Route path="/ajax" component={AjaxGif}/>
+                        <Route path="/redux" component={ReduxExample}/>
+                        <Route path="/immutable-data" component={ImmutableData}/>
                     </div>
                 </Router>
 

@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "immutability-helper": "^2.6.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

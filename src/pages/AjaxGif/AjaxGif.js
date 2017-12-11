@@ -34,7 +34,7 @@ class AjaxGif extends Component {
             this.setState({results: response.data.data});
         }).catch(error => {
             console.log(error);
-        })
+        });
     }
 
     handleQueryChange(event) {
