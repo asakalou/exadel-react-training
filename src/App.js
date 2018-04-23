@@ -13,9 +13,8 @@ import Fragments from "./pages/Fragments";
 import AjaxGif from "./pages/AjaxGif";
 import ReduxExample from "./pages/ReduxExample";
 import ImmutableData from "./pages/ImmutableData";
+import List from "./pages/List";
 
-
-const NotImplemented = () => <div>Not Implemented</div>;
 
 class App extends Component {
 
@@ -30,6 +29,7 @@ class App extends Component {
                             <li><Link to="/prop-types">PropTypes</Link></li>
                             <li><Link to="/component-lifecycle">Component Life Cycle</Link></li>
                             <li><Link to="/pure-components">Pure Components</Link></li>
+                            <li><Link to="/lists">Lists & Keys</Link></li>
                             <li><Link to="/refs">Refs</Link></li>
                             <li><Link to="/forms">Forms</Link></li>
                             <li><Link to="/portals">Portals</Link></li>
@@ -45,6 +45,7 @@ class App extends Component {
                         <Route path="/prop-types" component={PropAndTypes}/>
                         <Route path="/component-lifecycle" component={ComponentLifecycle}/>
                         <Route path="/pure-components" component={PurePure}/>
+                        <Route path="/lists" component={List}/>
                         <Route path="/portals" component={Portals}/>
                         <Route path="/forms" component={Forms}/>
                         <Route path="/refs" component={Refs}/>

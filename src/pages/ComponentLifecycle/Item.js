@@ -6,6 +6,7 @@ export class Item extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {};
         this.handleChangeName = this.handleChangeName.bind(this);
 
         this.logEvent('constructor');
@@ -13,6 +14,18 @@ export class Item extends Component {
 
     logEvent(eventName) {
         console.log(`${this.props.item.name} - ${eventName}`);
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('getDerivedStateFromProps');
+
+        return nextProps;
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        this.logEvent('getSnapshotBeforeUpdate');
+
+        return null;
     }
 
     componentWillMount() {
@@ -36,7 +49,7 @@ export class Item extends Component {
         this.logEvent('componentWillUpdate');
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState, snapshot) {
         this.logEvent('componentDidUpdate');
     }
 

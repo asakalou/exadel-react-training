@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import * as queryString from "query-string";
 
 const URL = 'http://api.giphy.com/v1/gifs/search';
 const API_KEY = 'JokfEsQ6phaio2LlwNgGHhpBr47QE89e';
@@ -22,12 +24,7 @@ class AjaxGif extends Component {
         this.handleQueryChange = this.handleQueryChange.bind(this);
     }
 
-    componentDidMount() {
-    }
-
-    handleSearch(event) {
-        event.preventDefault();
-
+    searchWithAxios = () => {
         axios.get(URL, {
             params: {api_key: API_KEY, q: this.state.query}
         }).then(response => {
@@ -35,6 +32,29 @@ class AjaxGif extends Component {
         }).catch(error => {
             console.log(error);
         });
+    }
+
+    searchWithRxJSAjax = () => {
+        const rParams = queryString.stringify({
+            key: API_KEY,
+            api_key: API_KEY,
+            q: this.state.query
+        });
+
+        return ajax({
+            url: `${URL}?${rParams}`,
+            method: 'GET',
+            responseType: 'json'
+        }).subscribe(({response}) => {
+            this.setState({results: response.data});
+        });
+    }
+
+    handleSearch(event) {
+        event.preventDefault();
+
+        // this.searchWithAxios();
+        this.searchWithRxJSAjax();
     }
 
     handleQueryChange(event) {

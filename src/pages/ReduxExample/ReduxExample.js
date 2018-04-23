@@ -3,11 +3,6 @@ import BasicExample from "./BasicExample";
 
 class ReactExample extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
         return (
             <div>

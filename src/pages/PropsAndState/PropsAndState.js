@@ -10,9 +10,6 @@ import React, {Component} from 'react';
 const Formatter1 = (props) => <span>Formatted 1: {props.value}</span>;
 
 class Formatter extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return <span>Formatted: {this.props.value}</span>

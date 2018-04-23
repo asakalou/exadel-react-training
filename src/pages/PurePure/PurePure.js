@@ -90,9 +90,9 @@ class PurePure extends Component {
 
     addRandomPerson() {
         const id = `${new Date().getTime()}`;
-        this.setState({
-            persons: this.state.persons.concat([{id, first: id, last: id}])
-        });
+        this.setState((prevState, props) => ({
+            persons: prevState.persons.concat([{id, first: id, last: id}])
+        }));
     }
 
 

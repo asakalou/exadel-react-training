@@ -26,19 +26,20 @@ class ComponentLifecycle extends Component {
     }
 
     handleChangeItemName(item) {
-        const indexOfItem = this.state.items.indexOf(item);
-        this.state.items[indexOfItem].name = `${item.name} -> ${new Date().getTime()}`;
-        this.setState({
-            items: this.state.items
+        this.setState((prevState, props) => {
+            const indexOfItem = prevState.items.indexOf(item);
+            prevState.items[indexOfItem].name = `${item.name} -> ${new Date().getTime()}`;
+            return {
+                items: prevState.items
+            }
         });
     }
 
     handleDeleteItem(item) {
-        const indexOfItem = this.state.items.indexOf(item);
-        this.state.items.splice(indexOfItem, 1);
-
-        this.setState({
-            items: this.state.items
+        this.setState((prevState, props) => {
+            const indexOfItem = prevState.items.indexOf(item);
+            const items = prevState.items.splice(indexOfItem, 1);
+            return {items}
         });
     }
 
@@ -54,7 +55,9 @@ class ComponentLifecycle extends Component {
                         {
                             this.state.items.map(item =>
                                 <li key={item.id}>
-                                    <Item ref={(itm) => {console.log(`Ref is set for ${item.id}`)}}
+                                    <Item ref={(itm) => {
+                                        console.log(`Ref is set for ${item.id}`)
+                                    }}
                                           item={item}
                                           onChangeName={this.handleChangeItemName}
                                           onDelete={this.handleDeleteItem}/>
