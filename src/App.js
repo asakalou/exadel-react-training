@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Link,
+    Route
+} from "react-router-dom";
 
 import Portals from "./pages/Portals";
 import PropAndTypes from "./pages/PropAndTypes";
@@ -14,6 +18,7 @@ import AjaxGif from "./pages/AjaxGif";
 import ReduxExample from "./pages/ReduxExample";
 import ImmutableData from "./pages/ImmutableData";
 import List from "./pages/List";
+import Routing from "./pages/Routing";
 
 
 class App extends Component {
@@ -37,6 +42,7 @@ class App extends Component {
                             <li><Link to="/Ajax">Ajax</Link></li>
                             <li><Link to="/redux">Redux</Link></li>
                             <li><Link to="/immutable-data">Immutable Data</Link></li>
+                            <li><Link to="/routing">Routing</Link></li>
                         </ol>
 
                         <hr/>
@@ -53,6 +59,7 @@ class App extends Component {
                         <Route path="/ajax" component={AjaxGif}/>
                         <Route path="/redux" component={ReduxExample}/>
                         <Route path="/immutable-data" component={ImmutableData}/>
+                        <Route path="/routing" component={Routing}/>
                     </div>
                 </Router>
 

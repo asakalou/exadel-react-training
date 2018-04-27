@@ -5,15 +5,19 @@ class Refs extends Component {
     constructor(props) {
         super(props);
 
-        this.setFocus = this.setFocus.bind(this);
+        this.taRef = React.createRef();
     }
 
-    setFocus() {
+    setInputFocus = () => {
         this.inputEl.focus();
     }
 
+    setTAFocus = () => {
+        this.taRef.current.focus();
+    }
+
     componentDidMount() {
-        console.log(this.inputEl);
+        console.log(this.inputEl, this.taRef.current);
     }
 
     render() {
@@ -23,26 +27,36 @@ class Refs extends Component {
                 <hr/>
 
                 <form>
-                    <button type="button" onClick={
-                        () => {
-                            this.inputEl.value = new Date().getTime();
-                        }
-                    }>Click</button>
-                    <input type="text"
-                           ref={(input) => {
-                               this.inputEl = input;
+                    <div>
+                        <button type="button" onClick={
+                            () => {
+                                this.inputEl.value = new Date().getTime();
+                            }
+                        }>Click</button>
+                        <input type="text"
+                               ref={(input) => {
+                                   this.inputEl = input;
 
-                               // React will call the ref callback with the DOM element
-                               // when the component mounts, and call it with null when it unmounts.
-                               // ref callbacks are invoked before componentDidMount
-                               // or componentDidUpdate lifecycle hooks.
-                               // Check at https://reactjs.org/docs/refs-and-the-dom.html
-                               if (this.inputEl) {
-                                   this.inputEl.focus();
-                               }
-                           }}
-                           defaultValue="Initial Value"/>
-                    <button type="button" onClick={this.setFocus}>Set focus</button>
+                                   // React will call the ref callback with the DOM element
+                                   // when the component mounts, and call it with null when it unmounts.
+                                   // ref callbacks are invoked before componentDidMount
+                                   // or componentDidUpdate lifecycle hooks.
+                                   // Check at https://reactjs.org/docs/refs-and-the-dom.html
+                                   if (this.inputEl) {
+                                       this.inputEl.focus();
+                                   }
+                               }}
+                               defaultValue="Initial Value"/>
+                        <button type="button" onClick={this.setInputFocus}>Set focus</button>
+                    </div>
+
+                    <hr/>
+
+                    <div>
+                        <textarea ref={this.taRef} defaultValue={'My Text'}/>
+                        <button type="button" onClick={this.setTAFocus}>Set focus</button>
+                    </div>
+
                 </form>
 
             </div>
