@@ -19,6 +19,7 @@ import ReduxExample from "./pages/ReduxExample";
 import ImmutableData from "./pages/ImmutableData";
 import List from "./pages/List";
 import Routing from "./pages/Routing";
+import AppContextPage from "./pages/Context";
 
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
                             <li><Link to="/redux">Redux</Link></li>
                             <li><Link to="/immutable-data">Immutable Data</Link></li>
                             <li><Link to="/routing">Routing</Link></li>
+                            <li><Link to="/context">Context</Link></li>
                         </ol>
 
                         <hr/>
@@ -60,6 +62,7 @@ class App extends Component {
                         <Route path="/redux" component={ReduxExample}/>
                         <Route path="/immutable-data" component={ImmutableData}/>
                         <Route path="/routing" component={Routing}/>
+                        <Route path="/context" component={AppContextPage}/>
                     </div>
                 </Router>
 
