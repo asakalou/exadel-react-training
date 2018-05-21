@@ -28,26 +28,26 @@ export class Item extends Component {
         return null;
     }
 
-    componentWillMount() {
-        this.logEvent('componentWillMount');
-    }
+    // componentWillMount() {
+    //     this.logEvent('componentWillMount');
+    // }
 
     componentDidMount() {
         this.logEvent('componentDidMount');
     }
 
-    componentWillReceiveProps() {
-        this.logEvent('componentWillReceiveProps');
-    }
+    // componentWillReceiveProps() {
+    //     this.logEvent('componentWillReceiveProps');
+    // }
 
     shouldComponentUpdate() {
         this.logEvent('shouldComponentUpdate');
         return true;
     }
 
-    componentWillUpdate() {
-        this.logEvent('componentWillUpdate');
-    }
+    // componentWillUpdate() {
+    //     this.logEvent('componentWillUpdate');
+    // }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         this.logEvent('componentDidUpdate');

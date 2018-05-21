@@ -40,12 +40,15 @@ class PropAndTypes extends Component {
                 <h1>PropTypes</h1>
 
                 {/* This works fine.*/}
-                <div>String: <Formatter value="string" anotherValue={<span>!!!</span>}/></div>/div>
+                <div>String:
+                    <Formatter value="string"
+                               anotherValue={<span>!!!</span>}/>
+                </div>
 
                 <br/>
 
                 {/* This one should fail. Check the console.*/}
-                <div>Number: <Formatter value={1}/></div>
+                <div>Number: <Formatter value={'1'} anotherValue={<span>asd</span>}/></div>
 
 
                 <div><Formatter value={'234'} anotherValue={<div>Another</div>}/></div>

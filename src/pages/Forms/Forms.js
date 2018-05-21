@@ -19,6 +19,7 @@ class Forms extends Component {
     }
 
     handleControlledNameChange(event) {
+
         this.setState({
             controlledName: event.target.value
         });

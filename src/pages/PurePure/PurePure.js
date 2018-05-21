@@ -106,7 +106,9 @@ class PurePure extends Component {
                     <ul>
                         {
                             this.state.persons.map(person => {
-                                return <SimpleCardComponent key={person.id} person={person}/>
+                                return <SimpleCardComponent
+                                    key={person.id}
+                                    person={person}/>
                             })
                         }
                     </ul>
@@ -121,7 +123,9 @@ class PurePure extends Component {
                     <ul>
                         {
                             this.state.persons.map(person => {
-                                return <PureCardComponent key={person.id} person={person}/>
+                                return <PureCardComponent
+                                    key={person.id}
+                                    person={person}/>
                             })
                         }
                     </ul>

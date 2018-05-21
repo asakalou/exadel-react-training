@@ -20,6 +20,7 @@ import ImmutableData from "./pages/ImmutableData";
 import List from "./pages/List";
 import Routing from "./pages/Routing";
 import AppContextPage from "./pages/Context";
+import HOC from "./pages/HOC";
 
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
                             <li><Link to="/immutable-data">Immutable Data</Link></li>
                             <li><Link to="/routing">Routing</Link></li>
                             <li><Link to="/context">Context</Link></li>
+                            <li><Link to="/hoc">HOC</Link></li>
                         </ol>
 
                         <hr/>
@@ -63,6 +65,7 @@ class App extends Component {
                         <Route path="/immutable-data" component={ImmutableData}/>
                         <Route path="/routing" component={Routing}/>
                         <Route path="/context" component={AppContextPage}/>
+                        <Route path="/hoc" component={HOC}/>
                     </div>
                 </Router>
 
