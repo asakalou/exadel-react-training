@@ -8,13 +8,30 @@ class MyComponent extends Component {
         const {mouseX, mouseY} = this.props;
 
         return (
-            <div>Mouse props: {`x: ${mouseX}, y: ${mouseY}`}</div>
+            <div>My Mouse props: {`x: ${mouseX}, y: ${mouseY}`}</div>
         );
     }
 
 }
 
 MyComponent.propTypes = {
+    mouseX: PropTypes.number,
+    mouseY: PropTypes.number
+};
+
+class YourComponent extends Component {
+
+    render() {
+        const {mouseX, mouseY} = this.props;
+
+        return (
+            <div>Your Mouse props: {`x: ${mouseX}, y: ${mouseY}`}</div>
+        );
+    }
+
+}
+
+YourComponent.propTypes = {
     mouseX: PropTypes.number,
     mouseY: PropTypes.number
 };
@@ -50,7 +67,8 @@ const withHOC = (Comp) => {
     }
 };
 
-const WrappedComponent = withHOC(MyComponent);
+const MyWrappedComponent = withHOC(MyComponent);
+const YourWrappedComponent = withHOC(YourComponent);
 
 
 class HOC extends Component {
@@ -61,7 +79,9 @@ class HOC extends Component {
                 <h1>HOC</h1>
                 <hr/>
 
-                <WrappedComponent/>
+                <MyWrappedComponent/>
+                <hr/>
+                <YourWrappedComponent/>
 
             </div>
         );
