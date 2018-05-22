@@ -10,7 +10,16 @@ const AppContext = React.createContext({
 const UserPanel = () => {
     return (
         <AppContext.Consumer>
-            {conf => <div>{conf.user.name}</div>}
+            {conf => {
+                return (
+                    <div>
+                        <div>{conf.user.name} and age is {conf.user.age}</div>
+                        <button
+                            onClick={conf.setAge}>Set Age</button>
+                    </div>
+                );
+
+            }}
         </AppContext.Consumer>
     );
 };
@@ -21,7 +30,17 @@ class AppContextPage extends Component {
         super();
 
         this.state = {
-            user: {name: 'Alex'}
+            user: {
+                name: 'Alex'
+            },
+            setAge: () => {
+                this.setState({
+                    user: {
+                        ...this.state.user,
+                        age: Date.now()
+                    }
+                })
+            }
         };
     }
 
@@ -48,9 +67,9 @@ class AppContextPage extends Component {
                     <UserPanel/>
 
                     <hr/>
-
-                    <UserPanel/>
                 </AppContext.Provider>
+
+                <UserPanel/>
 
                 <button onClick={this.switchUser}>Switch User</button>
 
