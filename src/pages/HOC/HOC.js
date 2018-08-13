@@ -71,6 +71,48 @@ const MyWrappedComponent = withHOC(MyComponent);
 const YourWrappedComponent = withHOC(YourComponent);
 
 
+// render props
+
+class MouseProps extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            x: 0,
+            y: 0
+        };
+    }
+
+    handleMouseMove = (event) => {
+        this.setState({
+            x: event.screenX,
+            y: event.screenY
+        });
+    }
+
+    render() {
+        return (
+            <div onMouseMove={this.handleMouseMove}>
+                {this.props.children(this.state)}
+            </div>
+
+        );
+    }
+}
+
+class MousePropsUsageExample extends Component {
+    render() {
+        return (
+            <MouseProps>
+                {({x, y}) => {
+                    return <div>{`x: ${x}, y: ${y}`}</div>
+                }}
+            </MouseProps>
+        );
+    }
+}
+
 class HOC extends Component {
 
     render() {
@@ -83,10 +125,13 @@ class HOC extends Component {
                 <hr/>
                 <YourWrappedComponent/>
 
+                <MousePropsUsageExample/>
+
             </div>
         );
     }
 
 }
+
 
 export default HOC;

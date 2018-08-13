@@ -35,11 +35,24 @@ const withRedux = (Comp) => {
     }
 };
 
-const MyComponent = withRedux(({...props}) => {
-   return (
-       <div>{props.counter}</div>
-   )
-});
+class MyComponent extends Component {
+    render() {
+        return (
+            <div>{this.props.counter}</div>
+        );
+    }
+}
+
+class MyComponent2 extends Component {
+    render() {
+        return (
+            <div>{this.props.counter}</div>
+        );
+    }
+}
+
+const MyContainerComponent = withRedux(MyComponent);
+const MyContainerComponent2 = withRedux(MyComponent2);
 
 
 class ReactExample extends Component {
