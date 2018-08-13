@@ -16,6 +16,10 @@ export class Item extends Component {
         console.log(`${this.props.item.name} - ${eventName}`);
     }
 
+    throwError() {
+        throw Error('Ooops!');
+    }
+
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log('getDerivedStateFromProps');
 
@@ -66,12 +70,13 @@ export class Item extends Component {
     }
 
     render() {
-        this.logEvent('render');
+        this.logEvent(this.a.c + this.b);
         return (
             <div className="item">
                 {this.props.item.name}
                 <button type="button" onClick={this.handleChangeName}>Change Name</button>
                 <button type="button" onClick={this.props.onDelete}>x</button>
+                <button type="button" onClick={this.throwError}>Error!</button>
             </div>
         );
     }

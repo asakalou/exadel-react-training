@@ -43,6 +43,10 @@ class ComponentLifecycle extends Component {
         });
     }
 
+    componentDidCatch() {
+        console.log('Caught!');
+    }
+
     render() {
         return (
             <div>
